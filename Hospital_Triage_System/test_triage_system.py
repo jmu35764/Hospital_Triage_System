@@ -37,6 +37,8 @@ class TestTriageSystem(unittest.TestCase):
         test.add_patient("Tim", 3)
         test.add_patient("Paulo", 3)
         self.assertEqual(test.size(), 5)
+        test.peek_next()
+        self.assertEqual(test.size(), 5)
 
 
 
