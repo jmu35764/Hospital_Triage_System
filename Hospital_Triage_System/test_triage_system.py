@@ -65,7 +65,22 @@ class TestTriageSystem(unittest.TestCase):
             test.add_patient("Mike", 6)
 
 
-
+    def test_size_clear_is_empty(self):
+        test = Triage_System()
+        test.add_patient("Sally", 3)
+        test.add_patient("Mike", 3)
+        test.add_patient("Tracy", 3)
+        test.add_patient("Tim", 3)
+        test.add_patient("Paulo", 3)
+        #test.clear()
+        self.assertEqual(test.size(), 5)
+        test.process_next()
+        self.assertEqual(test.size(), 4)
+        test.process_next()
+        self.assertEqual(test.size(), 3)
+        test.clear()
+        self.assertEqual(test.size(), 0)
+        self.assertTrue(test.is_empty)
 
 
 
