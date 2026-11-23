@@ -51,6 +51,18 @@ class TestTriageSystem(unittest.TestCase):
         self.assertEqual(test.peek_next(), None)
         self.assertEqual(test.process_next(), None)
 
+    def test_invalid_name_and_serity(self):
+        test = Triage_System()
+        test.add_patient("Sally", 3)
+        test.add_patient("Mike", 3)
+        test.add_patient("Tracy", 3)
+        test.add_patient(" ", 3)
+        test.add_patient("Mike", 6)
+        with self.assertRaises(ValueError)
+            test.add_patient(" ", 3)
+        with self.assertRaises(ValueError)
+            test.add_patient("Mike", 6)
+
 
 
 
