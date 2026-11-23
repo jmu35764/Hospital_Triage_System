@@ -58,9 +58,9 @@ class TestTriageSystem(unittest.TestCase):
         test.add_patient("Tracy", 3)
         test.add_patient(" ", 3)
         test.add_patient("Mike", 6)
-        with self.assertRaises(ValueError)
+        with self.assertRaises(ValueError):
             test.add_patient(" ", 3)
-        with self.assertRaises(ValueError)
+        with self.assertRaises(ValueError):
             test.add_patient("Mike", 6)
 
 
