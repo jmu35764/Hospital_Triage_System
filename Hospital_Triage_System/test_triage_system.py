@@ -29,6 +29,15 @@ class TestTriageSystem(unittest.TestCase):
         self.assertEqual(test.process_next(), ('Tim', 3))
         self.assertEqual(test.process_next(), ('Paulo', 3))
 
+    def test_peek_next_functionality(self):
+        test = Triage_System()
+        test.add_patient("Sally", 3)
+        test.add_patient("Mike", 3)
+        test.add_patient("Tracy", 3)
+        test.add_patient("Tim", 3)
+        test.add_patient("Paulo", 3)
+        self.assertEqual(test.size(), 5)
+
 
 
 
