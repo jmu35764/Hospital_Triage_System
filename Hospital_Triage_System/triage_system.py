@@ -21,10 +21,14 @@ class Triage_System():
         heappush(self.pq, (-severity, next(self.counter), name))
 
     def process_next(self):
+        if self.pq == []:
+            return None
         patient = heappop(self.pq)
         return patient[2], patient[0]*-1
 
     def peek_next(self):
+        if self.pq == []:
+            return None
         patient = self.pq[0]
         return patient[2], patient[0]*-1
 
