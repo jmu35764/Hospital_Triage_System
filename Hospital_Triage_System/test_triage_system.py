@@ -40,6 +40,17 @@ class TestTriageSystem(unittest.TestCase):
         test.peek_next()
         self.assertEqual(test.size(), 5)
 
+    def test_process_and_peek_when_empty(self):
+        test = Triage_System()
+        test.add_patient("Sally", 3)
+        test.add_patient("Mike", 3)
+        test.add_patient("Tracy", 3)
+        test.add_patient("Tim", 3)
+        test.add_patient("Paulo", 3)
+        test.clear()
+        self.assertEqual(test.peek_next(), None)
+        self.assertEqual(test.process_next(), None)
+
 
 
 
