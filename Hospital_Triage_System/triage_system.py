@@ -33,7 +33,7 @@ class Triage_System():
             return True
 
     def size(self):
-        return print(len(self.pq))
+        return len(self.pq)
 
     def clear(self):
         self.pq.clear()
@@ -46,14 +46,14 @@ if __name__ == "__main__":
     test_01.add_patient("Tracy", 1)
     test_01.add_patient("Tim", 1)
     test_01.add_patient("Paulo", 4)
-    test_01.size()
+    print(test_01.size())
     print(test_01.peek_next())
     print(test_01.pq)
     #print(test_01.process_next())
     #print(test_01.pq[0])
     #print(test_01.pq[1])
     print(test_01.process_next())
-    test_01.size()
+    print(test_01.size())
     print(test_01.pq)
     print(test_01.peek_next())
     print(test_01.process_next())
