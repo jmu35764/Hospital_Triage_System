@@ -4,13 +4,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ed38db8a-987d-44d6-b196-fa034b63a421</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>traige_system.py</StartupFile>
+    <StartupFile>triage_system.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Hospital_Triage_System</Name>
     <RootNamespace>Hospital_Triage_System</RootNamespace>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +25,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="main.py" />
-    <Compile Include="traige_system.py" />
+    <Compile Include="test_triage_system.py" />
+    <Compile Include="triage_system.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

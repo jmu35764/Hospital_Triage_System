@@ -14,7 +14,7 @@ class Triage_System():
                 return print("ERROR ->", e)
         if severity > 5 or severity < 1 or not isinstance(severity, int):
             try:
-                raise ValueError("Invalid Name")
+                raise ValueError("Invalid Priority Number")
             except ValueError as e:
                 return print("ERROR ->", e)
 
@@ -24,6 +24,20 @@ class Triage_System():
         patient = heappop(self.pq)
         return patient[2], patient[0]*-1
 
+    def peek_next(self):
+        patient = self.pq[0]
+        return patient[2], patient[0]*-1
+
+    def is_empty(self):
+        if self.pq == []:
+            return True
+
+    def size(self):
+        return print(len(self.pq))
+
+    def clear(self):
+        self.pq.clear()
+
 if __name__ == "__main__":
 
     test_01 = Triage_System()
@@ -32,13 +46,21 @@ if __name__ == "__main__":
     test_01.add_patient("Tracy", 1)
     test_01.add_patient("Tim", 1)
     test_01.add_patient("Paulo", 4)
+    test_01.size()
+    print(test_01.peek_next())
     print(test_01.pq)
     #print(test_01.process_next())
     #print(test_01.pq[0])
     #print(test_01.pq[1])
     print(test_01.process_next())
+    test_01.size()
     print(test_01.pq)
+    print(test_01.peek_next())
     print(test_01.process_next())
+    test_01.add_patient(" ", 2)
+    test_01.add_patient("Bob", 6)
+    #print(test_01.clear())
+    #print(test_01.is_empty())
 
 
 
