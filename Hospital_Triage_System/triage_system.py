@@ -8,15 +8,17 @@ class Triage_System():
        
     def add_patient(self, name, severity):
         if not isinstance(name, str) or name == " ":
-            try:
-                raise ValueError("Invalid Name")
-            except ValueError as e:
-                return print("ERROR ->", e)
+            raise ValueError("Invalid Name")
+            # try:
+            #     raise ValueError("Invalid Name")
+            # except ValueError as e:
+            #     return print("ERROR ->", e)
         if severity > 5 or severity < 1 or not isinstance(severity, int):
-            try:
-                raise ValueError("Invalid Priority Number")
-            except ValueError as e:
-                return print("ERROR ->", e)
+            raise ValueError("Invalid Priority Number")
+            # try:
+            #     raise ValueError("Invalid Priority Number")
+            # except ValueError as e:
+            #     return print("ERROR ->", e)
 
         heappush(self.pq, (-severity, next(self.counter), name))
 
