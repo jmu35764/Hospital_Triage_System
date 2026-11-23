@@ -22,7 +22,7 @@ class Triage_System():
 
     def process_next(self):
         patient = heappop(self.pq)
-        return patient[2], patient[0]-1
+        return patient[2], patient[0]*-1
 
 if __name__ == "__main__":
 
@@ -38,6 +38,7 @@ if __name__ == "__main__":
     #print(test_01.pq[1])
     print(test_01.process_next())
     print(test_01.pq)
+    print(test_01.process_next())
 
 
 
